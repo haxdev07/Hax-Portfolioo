@@ -85,7 +85,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   btn.disabled = true;
 
   try {
-    const res = await fetch('http://127.0.0.1:5000/submit', {
+    const res = await fetch('https://hax-portfolioo.onrender.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
