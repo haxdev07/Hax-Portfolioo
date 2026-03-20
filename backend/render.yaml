@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 services:
   - type: web
     name: harshil-contact-backend
     runtime: python
     buildCommand: pip install -r requirements.txt
+=======
+services:
+  - type: web
+    name: harshil-contact-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+>>>>>>> f4d9eb052a1c1026445a845e5123e61181ebb50a
     startCommand: gunicorn app:app

@@ -25,7 +25,6 @@
   </div>
 </header>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu">
   <a href="index.html">Home</a>
   <a href="experience.html">Experience</a>
@@ -38,15 +37,7 @@
   <h2 class="section-title">Contact Me</h2>
   <p class="section-desc">Let's build something together.</p>
 
-  <div id="form-message" style="
-    display:none;
-    max-width:700px;
-    margin:0 auto 20px;
-    padding:14px 20px;
-    border-radius:12px;
-    font-weight:600;
-    text-align:center;
-  "></div>
+  <div id="form-message" style="display:none;max-width:700px;margin:0 auto 20px;padding:14px 20px;border-radius:12px;font-weight:600;text-align:center;"></div>
 
   <form id="contact-form">
     <input type="text" name="name" placeholder="Your Name" required>
@@ -68,31 +59,21 @@
 </footer>
 
 <script src="js/script.js"></script>
-
 <script>
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-
-  const formData = {
-    name: this.name.value,
-    email: this.email.value,
-    message: this.message.value
-  };
-
+  const formData = { name: this.name.value, email: this.email.value, message: this.message.value };
   const msgBox = document.getElementById('form-message');
   const btn = this.querySelector('button');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-
   try {
     const res = await fetch('https://hax-portfolioo.onrender.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
     });
-
     const data = await res.json();
-
     if (data.success) {
       msgBox.style.display = 'block';
       msgBox.style.background = 'rgba(25,255,210,0.12)';
@@ -106,9 +87,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msgBox.style.background = 'rgba(255,80,80,0.12)';
     msgBox.style.color = '#ff6b6b';
     msgBox.style.border = '1px solid rgba(255,80,80,0.3)';
-    msgBox.textContent = 'Oops! Something went wrong. Please try again later or contact me on WhatsApp. +91 87991 26286';
+    msgBox.textContent = 'Oops! Something went wrong. Please try again later or contact me on WhatsApp.';
   }
-
   btn.textContent = 'Send Message';
   btn.disabled = false;
 });
