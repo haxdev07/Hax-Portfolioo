@@ -1,8 +1,3 @@
-<<<<<<< HEAD
 flask
 flask-cors
-=======
-flask
-flask-cors
->>>>>>> f4d9eb052a1c1026445a845e5123e61181ebb50a
 gunicorn
