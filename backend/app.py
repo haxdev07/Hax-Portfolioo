@@ -57,7 +57,7 @@ def admin():
 
     conn = sqlite3.connect('contacts.db')
     c = conn.cursor()
-    c.execute('SELECT * FROM contacts ORDER BY received_at DESC')
+    c.execute('SELECT * FROM contacts ORDER BY id ASC')
     rows = c.fetchall()
     conn.close()
 
